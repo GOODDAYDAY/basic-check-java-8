@@ -105,6 +105,23 @@ public class NotNullAndPositiveAspect {
                 log.info("#NotNullAndPositiveAspect return Optional.empty() with {}", method.getName());
                 return Optional.empty();
             }
+            if (returnType == Long.class) {
+                log.info("#NotNullAndPositiveAspect return Long with {}", method.getName());
+                return 0L;
+            }
+            if (returnType == Integer.class) {
+                log.info("#NotNullAndPositiveAspect return Integer with {}", method.getName());
+                return 0;
+            }
+            if (returnType == String.class) {
+                log.info("#NotNullAndPositiveAspect return String with {}", method.getName());
+                return "";
+            }
+            if (returnType == Boolean.class) {
+                log.info("#NotNullAndPositiveAspect return Boolean with {}", method.getName());
+                return false;
+            }
+            return null;
         }
         log.info("#NotNullAndPositiveAspect throw exception with {}", method.getName());
         throw new IllegalArgumentException();

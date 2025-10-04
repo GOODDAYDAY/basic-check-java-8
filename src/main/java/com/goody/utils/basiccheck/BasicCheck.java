@@ -23,7 +23,7 @@ import java.lang.annotation.Target;
 @Documented
 public @interface BasicCheck {
     /** Return type when validation fails, defaults to throwing exception */
-    ReturnType returnType() default ReturnType.EXCEPTION;
+    ReturnType returnType() default ReturnType.EMPTY;
 
     /**
      * Return type options for validation failure
